@@ -13,7 +13,7 @@
 // limitations under the License.
 
 use std::vec::Vec;
-use tikv_client::{Config, RawClient as Client};
+use tikv_client::RawClient as Client;
 
 pub struct DB {
     client: Client,
@@ -25,8 +25,7 @@ impl DB {
             .split_terminator(',')
             .map(|s| s.to_string())
             .collect();
-        let config = Config::new(endpoints);
-        let client = Client::new(config).await.unwrap();
+        let client = Client::new(endpoints).await.unwrap();
         DB { client }
     }
 
