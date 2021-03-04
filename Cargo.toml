@@ -5,19 +5,12 @@ authors = ["Rivtower Technologies <contact@rivtower.com>"]
 license = "Apache-2.0"
 edition = "2018"
 
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 log = "*"
-log4rs = "*"
-clap = { git = "https://github.com/clap-rs/clap/" }
+log4rs = { version = "*", features = ["gzip"] }
+clap = "3.0.0-beta.2"
 git-version = "*"
-tonic = "0.2"
-tokio = { version = "0.2", features = ["macros"] }
+tonic = "*"
+tokio = { version = "*", features = ["full"] }
 cita_cloud_proto = { git = "https://github.com/cita-cloud/cita_cloud_proto" }
 tikv-client = { git = "https://github.com/tikv/client-rust.git" }
-
-# workround from https://github.com/tikv/client-rust/issues/142
-[patch.crates-io]
-raft-proto = { git = "https://github.com/tikv/raft-rs", rev = "e624c1d48460940a40d8aa69b5329460d9af87dd" }
