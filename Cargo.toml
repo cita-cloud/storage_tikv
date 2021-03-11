@@ -14,3 +14,4 @@ tonic = "*"
 tokio = { version = "*", features = ["full"] }
 cita_cloud_proto = { git = "https://github.com/cita-cloud/cita_cloud_proto" }
 tikv-client = { git = "https://github.com/tikv/client-rust.git" }
+hex = "*"
